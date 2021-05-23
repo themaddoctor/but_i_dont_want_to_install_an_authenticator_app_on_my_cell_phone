@@ -73,4 +73,5 @@ But it is a very fine project, and I learned a lot by reading its code.
 ## references
 
 http://www.rfc-editor.org/rfc/rfc6238.txt
+
 http://github.com/google/google-authenticator/wiki/Key-Uri-Format
