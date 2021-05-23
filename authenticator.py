@@ -37,14 +37,14 @@ def int_to_bytes(n:int,length=False):
     return n.to_bytes(length,"big")
 
 def urldecode(encoded):
-    result = b""
+    result = ""
     i = 0
     while i < len(encoded):
         if encoded[i] == "%":
-            result += bytes.fromhex(encoded[i+1:i+3])
+            result += chr(int(encoded[i+1:i+3],16))
             i += 3
         else:
-            result += encoded[i].decode()
+            result += encoded[i]
             i += 1
     return result
 
@@ -65,7 +65,7 @@ def parse_URI(uri:str):
         return False
     remainder = uri[15:]
     service,remainder = remainder.split("?")
-    service = urldecode(service).decode("utf-8")
+    service = urldecode(service)
     pairs = remainder.split("&")
     issuer = ""
     digits = 6
@@ -74,7 +74,7 @@ def parse_URI(uri:str):
     for pair in pairs:
         key,value = pair.split("=")
         if key == "issuer":
-            issuer = urldecode(value).decode("utf-8")
+            issuer = urldecode(value)
         elif key == "secret":
             secret = value.upper()
         elif key == "algorithm":
