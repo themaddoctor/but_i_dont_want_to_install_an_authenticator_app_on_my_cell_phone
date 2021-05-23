@@ -39,6 +39,16 @@ This authenticator requires...
 - EasyProcess (needed by pyscreenshot)
 - pyzbar
 
+## how to use this authenticator
+
+Change the script to be executable. Then if you run it with no command-line arguments, and if there is a QR code visible
+on your desktop, it should scan that QR code and store the secret therein, as well as spit out the first OTP.
+
+Secrets are stored in file `~/.authentications`
+
+When you add a command-line argument, it will seek a service that matches the argument in its storage. If it finds one,
+it generates and outputs a new OTP.
+
 ## things that should be done
 
 If you would like to help, there are some things that should be done to this project. Feel free to send patches or pushes or whatever they are called.
@@ -46,6 +56,13 @@ If you would like to help, there are some things that should be done to this pro
 - a GUI. It should be a pretty one. It would nice if it could select the region of the desktop to scan. It should be independent of window manager, but if you want to write one for GNOME or KDE, then please do. But I would like one based on GTK+ so that it can work anywhere.
 - convert the storage to something standard, like CSV. I don't believe that the data is complicated enough to justify a true database, but I am willing to listen to arguments.
 - encrypt the storage, with PBKDF2 and some block cipher like AES or SERPENT
+
+## disclaimer
+
+I do not claim to have written this script well. I do not even claim that it will work.
+YOU USE IT AT YOUR OWN RISK. If you get locked out of your financial accounts and can't pay your rent, don't call /me/.
+If it gains self-awareness and embarks on a campaign of world domination, don't look at me--I'l be on the first
+Space-X flight outta here.
 
 ## no, I did not use pyotp
 
