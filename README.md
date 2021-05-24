@@ -38,7 +38,8 @@ This authenticator requires...
 - pyscreenshot (PIL ImageGrab() does not work on linux for older versions)
 - EasyProcess (needed by pyscreenshot)
 - pyzbar
-
+- python cryptodome
+- 
 ## how to use this authenticator
 
 Change the script to be executable. Then if you run it with no command-line arguments, and if there is a QR code visible
@@ -55,7 +56,6 @@ If you would like to help, there are some things that should be done to this pro
 
 - a GUI. It should be a pretty one. It would nice if it could select the region of the desktop to scan. It should be independent of window manager, but if you want to write one for GNOME or KDE, then please do. But I would like one based on GTK+ so that it can work anywhere.
 - convert the storage to something standard, like CSV. I don't believe that the data is complicated enough to justify a true database, but I am willing to listen to arguments.
-- encrypt the storage, with PBKDF2 and some block cipher like AES or SERPENT
 
 ## disclaimer
 
